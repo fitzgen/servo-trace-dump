@@ -4,4 +4,3 @@ before_script:
   - npm install --dev
 node_js:
   - "5"
-  - "6"
