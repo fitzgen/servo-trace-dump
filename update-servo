@@ -28,8 +28,20 @@ if [[ ! -e "$PROFILE_COMPONENT_DIR" ]]; then
     exit 1
 fi
 
-cp trace-dump.js $PROFILE_COMPONENT_DIR/trace-dump.js
-cp trace-dump.css $PROFILE_COMPONENT_DIR/trace-dump.css
+function banner {
+    echo "/*"                                                                            > $1
+    echo "!!! THIS FILE IS COPIED FROM https://github.com/fitzgen/servo-trace-dump !!!" >> $1
+    echo "Make sure to upstream changes, or they will get lost!"                        >> $1
+    echo "*/"                                                                           >> $1
+}
+
+TRACE_DUMP_JS="$PROFILE_COMPONENT_DIR/trace-dump.js"
+banner $TRACE_DUMP_JS
+cat trace-dump.js >> $TRACE_DUMP_JS
+
+TRACE_DUMP_CSS="$PROFILE_COMPONENT_DIR/trace-dump.css"
+banner $TRACE_DUMP_CSS
+cat trace-dump.css >> $TRACE_DUMP_CSS
 
 echo
 echo "======================================================================"
