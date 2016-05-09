@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# Stop if we get errors.
+set -e
+
+cd $(dirname $0)
+
+npm test || {
+    echo
+    echo "======================================================================"
+    echo "Error: tests failed!"
+    exit 1
+}
+
+SERVO_DIR=$1
+if [[ ! -e "$SERVO_DIR" ]]; then
+    echo
+    echo "======================================================================"
+    echo "Error: bad path to Servo checkout: $SERVO_DIR"
+    exit 1
+fi
+
+PROFILE_COMPONENT_DIR=$SERVO_DIR/components/profile
+if [[ ! -e "$PROFILE_COMPONENT_DIR" ]]; then
+    echo
+    echo "======================================================================"
+    echo "Error: missing components/profile in Servo checkout: $PROFILE_COMPONENT_DIR"
+    exit 1
+fi
+
+cp trace-dump.js $PROFILE_COMPONENT_DIR/trace-dump.js
+cp trace-dump.css $PROFILE_COMPONENT_DIR/trace-dump.css
+
+echo
+echo "======================================================================"
+echo "OK"

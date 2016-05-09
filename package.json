@@ -1,0 +1,15 @@
+{
+  "name": "servo-trace-dump",
+  "version": "1.0.0",
+  "description": "HTML timeline visualization of servo's profiling data",
+  "main": "trace-dump.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "The Servo Developers",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
+}
