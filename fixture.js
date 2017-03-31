@@ -7,7 +7,7 @@ const millisecondsToNanoseconds = ms => ms * 1000000;
 
 module.exports = [
   {
-    "category": { "Compositing": [] },
+    "category": "Compositing",
     "metadata": null,
     "startTime": millisecondsToNanoseconds(1),
     "endTime": millisecondsToNanoseconds(5),
@@ -15,7 +15,7 @@ module.exports = [
     "endEnergy": 0
   },
   {
-    "category": { "LayoutStyleRecalc": [] },
+    "category": "LayoutStyleRecalc",
     "metadata": {
       "url": "https://example.com",
       "iframe": { "RootWindow": [] },
@@ -27,7 +27,7 @@ module.exports = [
     "endEnergy": 0
   },
   {
-    "category": { "LayoutTextShaping": [] },
+    "category": "LayoutTextShaping",
     "metadata": {
       "url": "https://example.com",
       "iframe": { "RootWindow": [] },
@@ -39,7 +39,7 @@ module.exports = [
     "endEnergy": 0
   },
   {
-    "category": { "LayoutRestyleDamagePropagation": [] },
+    "category": "LayoutRestyleDamagePropagation",
     "metadata": {
       "url": "https://example.com",
       "iframe": { "RootWindow": [] },
@@ -51,7 +51,7 @@ module.exports = [
     "endEnergy": 0
   },
   {
-    "category": { "LayoutGeneratedContent": [] },
+    "category": "LayoutGeneratedContent",
     "metadata": {
       "url": "https://example.com",
       "iframe": { "RootWindow": [] },

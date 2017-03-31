@@ -240,11 +240,6 @@
     return increment;
   };
 
-  // Get the category name for the given trace.
-  const traceCategory = exports.traceCategory = trace => {
-    return Object.keys(trace.category)[0];
-  };
-
   /*** Window Specific Code ***************************************************/
 
   if (!window) {
@@ -524,7 +519,7 @@
     inner.style.width = state.nsToSelectionPx(trace.endTime - trace.startTime) + "px";
     inner.style.marginLeft = state.nsToSelectionPx(trace.startTime - state.startSelection) + "px";
 
-    let category = traceCategory(trace);
+    let category = trace.category;
     inner.textContent = category;
     inner.style.backgroundColor = state.getColorForCategory(category);
 

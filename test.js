@@ -240,20 +240,5 @@ describe("servo-trace-dump", () => {
         assert.equal(increment, 20);
       });
     });
-
-    describe("traceCategory", () => {
-      it("should return the category", () => {
-        const trace = {
-          "category": { "LayoutGeneratedContent": [] },
-          "metadata": null,
-          "startTime": 0,
-          "endTime": 1000000,
-          "startEnergy": 0,
-          "endEnergy": 0
-        };
-
-        assert.equal(traceDump.traceCategory(trace), "LayoutGeneratedContent");
-      });
-    });
   });
 });
